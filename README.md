@@ -16,22 +16,53 @@ AI Konsültasyon, farklı yapay zeka modellerini (GPT-4, Gemini, Claude, ya da l
 
 ## 🚀 Hızlı Başlangıç
 
-### 1. Environment Variables (Öncelikli)
+### 🎯 **Kolay Kurulum Seçenekleri:**
+
+#### **1. 🐳 Docker ile (En Kolay - Tek Komut):**
+```bash
+# Docker Compose ile
+docker-compose up -d
+
+# Veya sadece Docker ile
+docker run -p 3333:3333 -e OPENAI_API_KEY=your-key -e GEMINI_API_KEY=your-key -e ANTHROPIC_API_KEY=your-key aikonstultasyon
+```
+
+#### **2. 📦 Vercel ile (Ücretsiz Hosting):**
+```bash
+# Vercel CLI ile
+npm i -g vercel
+vercel --env OPENAI_API_KEY=your-key --env GEMINI_API_KEY=your-key --env ANTHROPIC_API_KEY=your-key
+```
+
+#### **3. 🖥️ Script ile (Otomatik):**
+
+**Linux/Mac:**
+```bash
+chmod +x install.sh
+./install.sh
+```
+
+**Windows:**
+```cmd
+install.bat
+```
+
+#### **4. 📝 Manuel Kurulum:**
+
+**Environment Variables:**
 
 **Sistem environment variables (Önerilen):**
-
 ```bash
 # ~/.zshrc veya ~/.bashrc dosyasına ekleyin
 export OPENAI_API_KEY="sk-your-openai-key-here"
-export GOOGLE_GENERATIVE_AI_API_KEY="your-google-ai-key-here"
+export GEMINI_API_KEY="your-google-ai-key-here"
 export ANTHROPIC_API_KEY="sk-ant-your-anthropic-key-here"
 
 # Terminal'i yeniden başlatın
 source ~/.zshrc
 ```
 
-**Alternatif - .env.local dosyası (Önerilen):**
-
+**Alternatif - .env.local dosyası:**
 ```bash
 # Kolay kurulum (önerilen):
 cp .env.example .env.local
