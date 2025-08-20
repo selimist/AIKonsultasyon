@@ -24,3 +24,7 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+[data-radix-select-item] {
+  color: #000 !important; /* siyah */
+}
