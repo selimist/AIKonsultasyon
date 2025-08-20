@@ -1,26 +1,38 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { conversationManager } from '@/lib/conversation-manager'
 
+// GET route handler
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function GET(request: NextRequest, { params }: any) {
-  const { id } = params
-  const conversation = conversationManager.getConversation(id)
+  try {
+    const { id } = params
+    const conversation = conversationManager.getConversation(id)
 
-  if (!conversation) {
-    return NextResponse.json({ error: 'Conversation not found' }, { status: 404 })
+    if (!conversation) {
+      return NextResponse.json({ error: 'Conversation not found' }, { status: 404 })
+    }
+
+    return NextResponse.json({ conversation })
+  } catch (error) {
+    console.error('Failed to get conversation:', error)
+    return NextResponse.json({ error: 'Failed to get conversation' }, { status: 500 })
   }
-
-  return NextResponse.json({ conversation })
 }
 
+// DELETE route handler
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function DELETE(request: NextRequest, { params }: any) {
-  const { id } = params
-  const deleted = conversationManager.deleteConversation(id)
+  try {
+    const { id } = params
+    const deleted = conversationManager.deleteConversation(id)
 
-  if (!deleted) {
-    return NextResponse.json({ error: 'Conversation not found' }, { status: 404 })
+    if (!deleted) {
+      return NextResponse.json({ error: 'Conversation not found' }, { status: 404 })
+    }
+
+    return NextResponse.json({ success: true })
+  } catch (error) {
+    console.error('Failed to delete conversation:', error)
+    return NextResponse.json({ error: 'Failed to delete conversation' }, { status: 500 })
   }
-
-  return NextResponse.json({ success: true })
 }
