@@ -433,9 +433,9 @@ export default function DiscussionInterface({ onBack }: DiscussionInterfaceProps
                     value={currentProviderId}
                     onChange={(e) => handleProviderChange(e.target.value)}
                     disabled={isDiscussing}
-                    className="w-full p-2 text-sm border border-gray-600 rounded-md focus:ring-2 focus:ring-blue-500"
+                    className="w-full p-2 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
                   >
-                    {allProviders.map(p => <option key={p.id} value={p.id}>{p.name}</option>)}
+                    {allProviders.map(p => <option key={p.id} value={p.id} className="text-black">{p.name}</option>)}
                   </select>
                 </div>
                 <div>
@@ -444,9 +444,9 @@ export default function DiscussionInterface({ onBack }: DiscussionInterfaceProps
                     value={currentModelId}
                     onChange={(e) => setCurrentModelId(e.target.value)}
                     disabled={isDiscussing || !currentSelectedProvider}
-                    className="w-full p-2 text-sm border border-gray-600 rounded-md focus:ring-2 focus:ring-blue-500"
+                    className="w-full p-2 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
                   >
-                    {currentSelectedProvider?.models?.map(m => <option key={m.id} value={m.id}>{m.name}</option>) || <option>Sağlayıcı seçin</option>}
+                    {currentSelectedProvider?.models?.map(m => <option key={m.id} value={m.id} className="text-black">{m.name}</option>) || <option>Sağlayıcı seçin</option>}
                   </select>
                 </div>
                 <button
@@ -497,10 +497,10 @@ export default function DiscussionInterface({ onBack }: DiscussionInterfaceProps
                       setModeratorProvider(provider);
                     }}
                     disabled={isDiscussing}
-                    className="w-full p-2 text-sm border border-gray-600 rounded-md focus:ring-2 focus:ring-blue-500"
+                    className="w-full p-2 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
                   >
-                    <option value="">Moderator seçin</option>
-                    {allProviders.map(p => <option key={p.id} value={p.id}>{p.name}</option>)}
+                    <option value="" className="text-black">Moderator seçin</option>
+                    {allProviders.map(p => <option key={p.id} value={p.id} className="text-black">{p.name}</option>)}
                   </select>
                 </div>
                 {moderatorProvider && (
@@ -520,9 +520,9 @@ export default function DiscussionInterface({ onBack }: DiscussionInterfaceProps
                         }
                       }}
                       disabled={isDiscussing}
-                      className="w-full p-2 text-sm border border-gray-600 rounded-md focus:ring-2 focus:ring-blue-500"
+                      className="w-full p-2 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
                     >
-                      {moderatorProvider.models?.map(m => <option key={m.id} value={m.id}>{m.name}</option>) || <option>Model seçin</option>}
+                      {moderatorProvider.models?.map(m => <option key={m.id} value={m.id} className="text-black">{m.name}</option>) || <option>Model seçin</option>}
                     </select>
                   </div>
                 )}
@@ -537,9 +537,9 @@ export default function DiscussionInterface({ onBack }: DiscussionInterfaceProps
                   value={maxRounds}
                   onChange={(e) => setMaxRounds(Number(e.target.value))}
                   disabled={isDiscussing}
-                  className="w-full p-2 text-sm border border-gray-600 rounded-md focus:ring-2 focus:ring-blue-500"
+                  className="w-full p-2 text-sm border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
                 >
-                  {[1, 2, 3, 4, 5].map(n => <option key={n} value={n}>{n}</option>)}
+                  {[1, 2, 3, 4, 5].map(n => <option key={n} value={n} className="text-black">{n}</option>)}
                 </select>
               </div>
               <div className="flex items-center">
