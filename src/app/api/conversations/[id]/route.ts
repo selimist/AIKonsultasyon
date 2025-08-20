@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { conversationManager } from '@/lib/conversation-manager'
 
-// ✅ Next.js App Router doğru tip imzası
 export async function GET(
   request: NextRequest,
   { params }: { params: { id: string } }
