@@ -704,7 +704,7 @@ export default function DiscussionInterface({ onBack }: DiscussionInterfaceProps
                 value={question}
                 onChange={(e) => setQuestion(e.target.value)}
                 placeholder="AI modellerinin tartışmasını istediğiniz soruyu yazın..."
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 resize-none"
+                className="w-full p-3 border border-gray-300 rounded-lg text-gray-600 focus:ring-2 focus:ring-blue-500 resize-none"
                 rows={2}
                 disabled={isDiscussing}
                 onKeyDown={(e) => {
