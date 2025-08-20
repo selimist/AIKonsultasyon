@@ -1,12 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { conversationManager } from '@/lib/conversation-manager'
 
-interface RouteParams {
-  params: {
-    id: string
-  }
-}
-
-export async function GET(request: NextRequest, { params }: RouteParams) {
+// ikinci parametrenin tipi verilmedi
+export async function GET(request: NextRequest, { params }) {
   try {
     const { id } = params
     const conversation = conversationManager.getConversation(id)
@@ -22,7 +18,7 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
   }
 }
 
-export async function DELETE(request: NextRequest, { params }: RouteParams) {
+export async function DELETE(request: NextRequest, { params }) {
   try {
     const { id } = params
     const deleted = conversationManager.deleteConversation(id)
